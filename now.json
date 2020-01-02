@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "name": "adify",
+  "public": true,
+  "alias": [
+    "adify",
+    "adify.tech",
+    "www.adify.tech"
+  ],
+  "scope": "iqubex-technologies",
+  "build": {
+    "env": {
+      "ADIFY_GA_TRACKING_ID": "@adifygatrackingid",
+      "ADIFY_STEIN_API_KEY": "@adifysteinapikey",
+      "ADIFY_STEIN_API_USERNAME": "@adifysteinapiusername",
+      "ADIFY_STEIN_API_PASSWORD": "@adifysteinapipassword"
+    }
+  },
+  "env": {
+    "MONGODB_USERNAME": "@adifymongodbusername",
+    "MONGODB_PASSWORD": "@adifymongodbpassword",
+    "MONGODB_DATABASE": "@adifymongodbdatabase",
+    "MONGODB_CLUSTER": "@adifymongodbcluster"
+  },
+  "builds": [
+    {
+      "src": "packages/web/package.json",
+      "use": "@now/next"
+    },
+    {
+      "src": "packages/backend/src/index.ts",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "packages/backend/src/index.ts"
+    },
+    {
+      "src": "(.*)",
+      "dest": "packages/web$1",
+      "continue": true
+    }
+  ]
+}
