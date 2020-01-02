@@ -3,7 +3,7 @@
 [![Type](https://img.shields.io/badge/type-monorepo-yellow.svg?style=flat-square)](https://github.com/iqubex-technologies/adify)
 [![emoji-log](https://cdn.jsdelivr.net/gh/ahmadawais/stuff@ca978741836412b5e33ce8561f5f95c933177067/emoji-log/flat.svg)](https://github.com/KumarAbhirup/Emoji-Log/)
 [![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@kumar_abhirup)](https://twitter.com/kumar_abhirup/)
-[![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@BrianEmilius)](https://twitter.com/BrianEmilius/)
+[![Twitter](https://img.shields.io/twitter/follow/BrianEmilius.svg?style=social&label=@BrianEmilius)](https://twitter.com/BrianEmilius/)
 
 ## 📦 Setup
 
