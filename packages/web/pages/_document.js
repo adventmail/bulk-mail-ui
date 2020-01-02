@@ -21,17 +21,14 @@ class MyDocument extends Document {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${process.env.GA_TRACKING_ID}');
+        gtag('config', '${process.env.AM_GA_TRACKING_ID}');
       `,
   })
 
   render() {
     return (
       <html lang="en">
-        <Head>
-          {this.props.styleTags}
-          <script src="https://kit.fontawesome.com/d1bedd9d7d.js" />
-        </Head>
+        <Head>{this.props.styleTags}</Head>
         <body style={{ padding: 0, margin: 0 }}>
           <noscript>
             <div
@@ -65,33 +62,7 @@ class MyDocument extends Document {
             </>
           )}
 
-          <Head>
-            <script src="/static/assets/js/jquery-1.12.1.min.js" />
-
-            <script src="/static/assets/js/popper.min.js" />
-
-            <script src="/static/assets/js/bootstrap.min.js" />
-
-            <script src="/static/assets/js/jquery.magnific-popup.js" />
-
-            <script src="/static/assets/js/swiper.min.js" />
-
-            <script src="/static/assets/js/masonry.pkgd.js" />
-
-            <script src="/static/assets/js/owl.carousel.min.js" />
-            <script src="/static/assets/js/jquery.nice-select.min.js" />
-
-            <script src="/static/assets/js/slick.min.js" />
-            <script src="/static/assets/js/jquery.counterup.min.js" />
-            <script src="/static/assets/js/waypoints.min.js" />
-            <script src="/static/assets/js/contact.js" />
-            <script src="/static/assets/js/jquery.ajaxchimp.min.js" />
-            <script src="/static/assets/js/jquery.form.js" />
-            <script src="/static/assets/js/jquery.validate.min.js" />
-            <script src="/static/assets/js/mail-script.js" />
-
-            <script src="/static/assets/js/custom.js" />
-          </Head>
+          <Head>{/* Custom Scripts Here */}</Head>
         </body>
       </html>
     )

@@ -1,8 +1,9 @@
-# 🏄 adify.tech
+# 🏄 bulk-mail-ui
 
 [![Type](https://img.shields.io/badge/type-monorepo-yellow.svg?style=flat-square)](https://github.com/iqubex-technologies/adify)
 [![emoji-log](https://cdn.jsdelivr.net/gh/ahmadawais/stuff@ca978741836412b5e33ce8561f5f95c933177067/emoji-log/flat.svg)](https://github.com/KumarAbhirup/Emoji-Log/)
 [![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@kumar_abhirup)](https://twitter.com/kumar_abhirup/)
+[![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@BrianEmilius)](https://twitter.com/BrianEmilius/)
 
 ## 📦 Setup
 
@@ -11,8 +12,8 @@
 - Run
 
 ```bash
-$ git clone https://github.com/iqubex-technologies/adify adify-monorepo # to clone project
-$ cd adify-monorepo # enter in the project
+$ git clone https://github.com/adventmail/bulk-mail-ui bulk-mail-ui # to clone project
+$ cd bulk-mail-ui # enter in the project
 $ yarn # install modules
 $ yarn dev # run development server
 ```
@@ -46,6 +47,4 @@ $ yarn dev # run development server
 
 ## 📝 License
 
-**MIT - Source code by [Kumar Abhirup](https://kumar.now.sh)**
-
-_Follow me 👋 **on Twitter**_ → [![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@kumar_abhirup)](https://twitter.com/kumar_abhirup/)
+**MIT**

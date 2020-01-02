@@ -1,27 +1,15 @@
 {
   "version": 2,
-  "name": "adify",
+  "name": "bulkmailui",
   "public": true,
-  "alias": [
-    "adify",
-    "adify.tech",
-    "www.adify.tech"
-  ],
-  "scope": "iqubex-technologies",
+  "alias": ["bulkmailui"],
+  "scope": "adventmail",
   "build": {
     "env": {
-      "ADIFY_GA_TRACKING_ID": "@adifygatrackingid",
-      "ADIFY_STEIN_API_KEY": "@adifysteinapikey",
-      "ADIFY_STEIN_API_USERNAME": "@adifysteinapiusername",
-      "ADIFY_STEIN_API_PASSWORD": "@adifysteinapipassword"
+      "AM_GA_TRACKING_ID": "@amgatrackingid"
     }
   },
-  "env": {
-    "MONGODB_USERNAME": "@adifymongodbusername",
-    "MONGODB_PASSWORD": "@adifymongodbpassword",
-    "MONGODB_DATABASE": "@adifymongodbdatabase",
-    "MONGODB_CLUSTER": "@adifymongodbcluster"
-  },
+  "env": {},
   "builds": [
     {
       "src": "packages/web/package.json",
