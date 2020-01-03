@@ -34,6 +34,7 @@ server.use(
 server.start(
   {
     endpoint: '/api/graphql',
+    cacheControl: false,
   },
   details => console.log(`GraphQL Server is running on PORT ${details.port}`)
 )

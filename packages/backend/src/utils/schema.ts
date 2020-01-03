@@ -1,6 +1,7 @@
 const typeDefs = `
   type Mutation {
     exampleMutation: String
+    sendMails: String
   }
 
   type Query {
