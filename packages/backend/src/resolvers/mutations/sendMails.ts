@@ -2,6 +2,7 @@
 /* eslint-disable no-plusplus */
 
 import * as cron from 'node-cron'
+import { PubSub } from 'graphql-yoga'
 import {
   stringProcessor,
   createTransport,
@@ -16,7 +17,8 @@ const sendMails = async (
   {
     configuration,
     shouldRestart = false,
-  }: { configuration: BmcConfigurationFile; shouldRestart: boolean }
+  }: { configuration: BmcConfigurationFile; shouldRestart: boolean },
+  { pubsub }: { pubsub: PubSub }
 ): Promise<object> => {
   // Create a NodeMailer transporter
   const transporter: Mail = createTransport(configuration)
@@ -98,24 +100,10 @@ const sendMails = async (
 
       sentTo.push(row?.email)
 
-      // TODO: Write back everytime a mail is sent.
-      // await fs.writeFileSync(
-      //   configuration.jsonConfPath,
-      //   JSON.stringify(
-      //     {
-      //       ...configurationToWriteFile,
-      //       nonUserData: {
-      //         sentTo,
-      //       },
-      //     },
-      //     null,
-      //     2
-      //   )
-      // )
-
-      // GraphQL way to log messages live? Maybe GraphQL subscriptions?
-      // configuration?.configuration?.verbose !== false &&
-      //   console.log(`${chalk.yellow(`Mail sent to ${row.email}.`)}`)
+      // GraphQL way to log messages live
+      pubsub.publish('newMail', {
+        newMail: row?.email,
+      })
     } catch (error) {
       logResult(error)
 

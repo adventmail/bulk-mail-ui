@@ -56,6 +56,11 @@ const typeDefs = `
   type Query {
     exampleQuery: String
   }
+
+  # Subscriptions
+  type Subscription {
+    newMail: String!
+  }
 `
 
 export default typeDefs
