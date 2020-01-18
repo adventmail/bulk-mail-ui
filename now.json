@@ -2,7 +2,7 @@
   "version": 2,
   "name": "bulkmailui",
   "public": true,
-  "alias": ["bulkmailui"],
+  "alias": ["bulkmailui", "adventmail", "mailadvent"],
   "scope": "adventmail",
   "build": {
     "env": {
