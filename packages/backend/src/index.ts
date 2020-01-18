@@ -4,7 +4,7 @@ import * as bodyParser from 'body-parser'
 
 import typeDefs from './utils/schema'
 import resolvers from './resolvers'
-// import db from './utils/database'
+import pubsub from './utils/pubsub'
 
 const server: GraphQLServer = new GraphQLServer({
   typeDefs,
@@ -14,7 +14,7 @@ const server: GraphQLServer = new GraphQLServer({
   },
   context: (request): object => ({
     ...request,
-    // db,
+    pubsub,
   }),
 })
 
@@ -30,10 +30,15 @@ server.use(
   })
 )
 
+// Port
+const PORT = 4000
+
 // Routes
 server.start(
   {
     endpoint: '/api/graphql',
+    cacheControl: false,
+    port: PORT,
   },
   details => console.log(`GraphQL Server is running on PORT ${details.port}`)
 )
