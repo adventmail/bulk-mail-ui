@@ -28,7 +28,13 @@ class MyDocument extends Document {
   render() {
     return (
       <html lang="en">
-        <Head>{this.props.styleTags}</Head>
+        <Head>
+          {this.props.styleTags}
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/blocks.css/dist/blocks.min.css"
+          />
+        </Head>
         <body style={{ padding: 0, margin: 0 }}>
           <noscript>
             <div

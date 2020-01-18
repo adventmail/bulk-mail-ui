@@ -3,6 +3,8 @@ import App from 'next/app'
 
 import Page from '../src/components/Page'
 
+import '../src/lib/styles/blocks.sass'
+
 class Wrapper extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {}

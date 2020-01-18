@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-// No one's using it LoL
 export const Container = styled.main`
   font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
     'Arial', sans-serif;
@@ -11,7 +10,6 @@ export const Container = styled.main`
   text-align: center;
 
   h1 {
-    margin-top: 70px;
     font-size: 45px;
   }
 
@@ -28,15 +26,22 @@ export const Container = styled.main`
   }
 `
 
-export const Heading = styled.h1`
+export const Header = styled.header`
+  line-height: 20px;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+`
+
+export const Body = styled.section`
+  padding: 20px;
   text-align: center;
 `
 
-export const Subheading = styled.h2`
-  text-align: center;
+export const UploadButton = styled.button`
+  font-size: 2.25vh;
 `
 
-export const HeroFlex = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-`
+export const Footer = styled.footer``
