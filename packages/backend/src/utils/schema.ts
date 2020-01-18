@@ -41,6 +41,13 @@ const typeDefs = `
   # Returned data after Mails Sent
   type MailSentResponse {
     message: String!
+    channelHash: String!
+  }
+
+  # Returned data after newMail received
+  type NewMailResponse {
+    email: String!
+    channelHash: String!
   }
 
   # Mutations
@@ -59,7 +66,7 @@ const typeDefs = `
 
   # Subscriptions
   type Subscription {
-    newMail: String!
+    newMail(channelHash: String!): NewMailResponse!
   }
 `
 

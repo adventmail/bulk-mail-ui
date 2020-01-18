@@ -67,6 +67,10 @@ const sendMails = async (
 
   let dataIndex = 0
 
+  const channelHash = Math.random()
+    .toString(36)
+    .substr(2, 5)
+
   async function sendMail(
     row,
     task: cron.ScheduledTask | 'forloop'
@@ -101,8 +105,8 @@ const sendMails = async (
       sentTo.push(row?.email)
 
       // GraphQL way to log messages live
-      pubsub.publish('newMail', {
-        newMail: row?.email,
+      pubsub.publish(`newMail-${channelHash}`, {
+        newMail: { email: row?.email, channelHash },
       })
     } catch (error) {
       logResult(error)
@@ -121,8 +125,10 @@ const sendMails = async (
     dataIndex++
   }
 
+  const isAForLoop = isForLoop(mailIntervalDuration)
+
   if (csvDataWithoutSentTo.length > 0) {
-    if (isForLoop(mailIntervalDuration)) {
+    if (isAForLoop) {
       // Do in For-Loop
       for (const row of csvDataWithoutSentTo) {
         let sendingProcess
@@ -168,7 +174,8 @@ const sendMails = async (
   }
 
   return {
-    message: 'Emails sent.',
+    message: isAForLoop ? 'Emails sent' : 'Email Sending process started',
+    channelHash,
   }
 }
 

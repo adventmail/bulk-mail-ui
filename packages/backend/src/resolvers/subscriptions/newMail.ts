@@ -6,9 +6,10 @@ import { PubSub } from 'graphql-yoga'
 
 const newMail = (
   parent,
-  argument,
+  { channelHash }: { channelHash: string },
   { pubsub }: { pubsub: PubSub }
-): AsyncIterator<unknown, any, undefined> => pubsub.asyncIterator('newMail')
+): AsyncIterator<unknown, any, undefined> =>
+  pubsub.asyncIterator(`newMail-${channelHash}`)
 
 export default {
   subscribe: newMail,
