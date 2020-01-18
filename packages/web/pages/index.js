@@ -1,45 +1,34 @@
+import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Upload from 'rc-upload'
+import { useSpring, animated } from 'react-spring'
 
 import { meta } from '../src/api/meta'
-import {
-  Container,
-  Header,
-  Body,
-  Footer,
-  UploadButton,
-} from '../src/lib/styles/styled'
+import { Container, Header, Footer } from '../src/lib/styles/styled'
+import { fadeInWithRotation } from '../src/lib/reactSpringAnimations'
+import AnimatedMailUi from '../src/components/AnimatedMailUi'
 
 export default function HomePage() {
+  const fadeIn = useSpring(fadeInWithRotation)
+
   return (
     <>
       <Head>
         <title>{meta.title}</title>
       </Head>
-      <Container>
-        <Link href="/">
-          <Header className="block accent">
-            <h1>💌 AdventMail</h1>
-          </Header>
-        </Link>
+      <animated.div style={{ ...fadeIn }}>
+        <Container>
+          <Link href="/">
+            <Header className="block accent">
+              <h1>💌 AdventMail</h1>
+            </Header>
+          </Link>
 
-        {/* Here goes Animation Wrapper */}
-        <>
-          <Body className="block fixed">
-            <center className="i-used-center-tag-forgive-me-please-dont-kill-me">
-              <h2>Upload .csv file</h2>
-              <Upload>
-                <UploadButton className="block accent" type="button">
-                  Upload
-                </UploadButton>
-              </Upload>
-            </center>
-          </Body>
-        </>
+          <AnimatedMailUi />
 
-        <Footer className="block accent fixed">This is the footer.</Footer>
-      </Container>
+          <Footer className="block accent fixed">This is the footer.</Footer>
+        </Container>
+      </animated.div>
     </>
   )
 }
