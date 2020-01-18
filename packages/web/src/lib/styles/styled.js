@@ -9,6 +9,9 @@ export const Container = styled.main`
   line-height: 1.65;
   text-align: center;
 
+  width: 1100px;
+  max-width: 98%;
+
   h1 {
     font-size: 45px;
   }
@@ -42,6 +45,11 @@ export const Body = styled.section`
 
 export const UploadButton = styled.button`
   font-size: 2.25vh;
+`
+
+export const Spacing = styled.div`
+  padding: 5px;
+  clear: both;
 `
 
 export const Footer = styled.footer``
